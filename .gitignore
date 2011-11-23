@@ -1,6 +1,5 @@
-*.log
-*.swp
-*.swo
-*.pyc
-*.sqlite3
-.DS_Store
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
