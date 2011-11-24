@@ -9,6 +9,7 @@ gem 'therubyracer', '~> 0.9.8'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
+gem 'omniauth-google-oauth2'
 
 # Gems used only for assets and not required
 # in production environments by default.
