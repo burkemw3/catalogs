@@ -1,4 +1,4 @@
-class AuthenticationController < ApplicationController
+class AuthenticationsController < ApplicationController
   def index
     @authentications = current_user.authentications if current_user
   end
@@ -6,13 +6,15 @@ class AuthenticationController < ApplicationController
   def create
     logger.debug 'before hash assignment'
     omniauth = request.env["omniauth.auth"]
+    logger.debug 'before debug'
+    logger.debug ['provider: ?, uid: ?', omniauth['provider'], omniauth['uid']]
     logger.debug 'before authentication db search'
-    authentication = Authentication.find_by_provder_and_uid(omniauth['provider'], omniauth['uid'])
+    authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
     logger.debug 'before if'
     if authentication
       logger.debug 'authentication'
       flash[:notice] = "You signed in."
-      session[:user_id] = authentication.user.id
+      session[:user_id] = authentication.user_id
     elsif current_user
       logger.debug 'current_user'
       current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])  
@@ -30,7 +32,7 @@ class AuthenticationController < ApplicationController
       session[:user_id] = user.id
     end
     logger.debug 'before redirect'
-    redirect_to authentication_url
+    redirect_to authentications_url
   end
 
   def destroy
@@ -42,6 +44,6 @@ class AuthenticationController < ApplicationController
     else
       flash[:error] = "You cannot remove a sign in method if you don't have any other methods.  Please add another method before removing this one."
     end
-    redirect_to authentication_url
+    redirect_to authentications_url
   end
 end

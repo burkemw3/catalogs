@@ -1,6 +1,6 @@
 Catalogs::Application.routes.draw do
-  match "/auth/:provider/callback" => "authentication#create"
-  resources :authentication
+  match "/auth/:provider/callback" => "authentications#create"
+  resources :authentications
 
   get "home/index"
 
