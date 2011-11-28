@@ -2,12 +2,14 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-gem 'pg', '~> 0.11.0'
+gem 'pg', :group => :production
+gem 'sqlite3-ruby', :group => :development
+
 gem 'execjs', '~> 1.2.9'
 gem 'therubyracer', '~> 0.9.8'
 
-gem 'omniauth'
-gem 'omniauth-twitter'
+gem 'omniauth', '1.0.0'
+gem 'omniauth-twitter', '0.0.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
