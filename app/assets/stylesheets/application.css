@@ -118,14 +118,12 @@ a {
   margin-bottom: 10px;
 }
 
-
-
 .authentications {
   margin-bottom: 30px;
 }
 
 .authentication {
-  width: 130px;
+  padding-left: 25px;
   float: left;
   background-color: #EEE;
   border: solid 1px #999;
