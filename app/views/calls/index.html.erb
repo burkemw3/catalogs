@@ -1,0 +1,27 @@
+<h1>Listing calls</h1>
+
+<table>
+  <tr>
+    <th>Publisher</th>
+    <th>Date</th>
+    <th>Result</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @calls.each do |call| %>
+  <tr>
+    <td><%= call.publisher %></td>
+    <td><%= call.date %></td>
+    <td><%= call.result %></td>
+    <td><%= link_to 'Show', call %></td>
+    <td><%= link_to 'Edit', edit_call_path(call) %></td>
+    <td><%= link_to 'Destroy', call, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Call', new_call_path %>

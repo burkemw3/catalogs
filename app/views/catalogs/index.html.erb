@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Publisher</th>
+    <th>Date</th>
+    <th>Issue</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @catalogs.each do |catalog| %>
+  <tr>
+    <td><%= link_to catalog.publisher.name, publisher_path(catalog.publisher) %></td>
+    <td><%= catalog.date %></td>
+    <td><%= catalog.issue %></td>
+    <td><%= link_to 'Show', catalog %></td>
+    <td><%= link_to 'Edit', edit_catalog_path(catalog) %></td>
+    <td><%= link_to 'Destroy', catalog, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Catalog', new_catalog_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Publisher:</b>
+  <%= link_to @call.publisher.name, publisher_path(@call.publisher) %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @call.date %>
+</p>
+
+<p>
+  <b>Result:</b>
+  <%= @call.result %>
+</p>
+
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', :back %>

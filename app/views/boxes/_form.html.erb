@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag    "really-simple-color-picker/colorPicker" %>
+<%= javascript_include_tag "really-simple-color-picker/jquery.colorPicker.js" %>
+
+<% if @box.catalog.publisher.name %>
+  <p> for publisher <%= @box.catalog.publisher.name %>, catalog issue <%= @box.catalog.issue %>
+<% end %>
+
+<%= form_for(@box) do |f| %>
+  <% if @box.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@box.errors.count, "error") %> prohibited this box from being saved:</h2>
+
+      <ul>
+      <% @box.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :catalog_id %>
+  <div class="field">
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br />
+    <%= f.text_field :color %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+$(function() {
+  $("#box_color").colorPicker();
+});
+</script>

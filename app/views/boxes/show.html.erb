@@ -1,0 +1,23 @@
+<p>
+  <b>Catalog:</b>
+  <%= link_to @box.catalog.publisher.name, publisher_path(@box.catalog.publisher) %> on <%= link_to @box.catalog.issue, catalog_path(@box.catalog) %>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @box.label %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @box.value %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @box.color %>
+</p>
+
+
+<%= link_to 'Edit', edit_box_path(@box) %> |
+<%= link_to 'Back', :back %>
