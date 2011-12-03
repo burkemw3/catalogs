@@ -1,0 +1,41 @@
+<p>
+  <b>Publisher:</b>
+  <%= link_to @catalog.publisher.name, publisher_path(@catalog.publisher) %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @catalog.date %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%= @catalog.issue %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
+<%= link_to 'Back', :back %>
+
+<h3>Boxes</h3>
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @catalog.boxes.each do |box| %>
+  <tr>
+    <td><%= box.label %></td>
+    <td style="background-color: <%= box.color %>;"><%= box.value %></td>
+    <td><%= link_to 'Show', box %></td>
+    <td><%= link_to 'Edit', edit_box_path(box) %></td>
+    <td><%= link_to 'Destroy', box, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to "New box", new_catalog_box_path(@catalog) %>

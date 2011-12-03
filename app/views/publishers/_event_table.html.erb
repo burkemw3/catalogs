@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Date</th>
+    <th>Issue/Result</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% events.each do |event| %>
+  <tr>
+    <% if event.class == Call %>
+    <td>Call</td>
+    <td><%= event.date %></td>
+    <td><%= event.result %></td>
+    <td><%= link_to 'Edit', edit_call_path(event) %></td>
+    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% elsif event.class == Catalog %>
+    <td><%= link_to 'Catalog', catalog_path(event) %></td>
+    <td><%= event.date %></td>
+    <td><%= event.issue %></td>
+    <td><%= link_to 'Edit', edit_catalog_path(event) %></td>
+    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

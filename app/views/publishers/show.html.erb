@@ -1,0 +1,29 @@
+<h2>Publisher</h2>
+
+<p>
+  <b>Name:</b>
+  <%= @publisher.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @publisher.phone %>
+</p>
+
+<p>
+  <b>Should call:</b>
+  <%= @publisher.should_call %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @publisher.address %>
+</p>
+
+
+<%= link_to 'Edit', edit_publisher_path(@publisher) %> |
+<%= link_to 'Back', :back %>
+
+<h2>Events</h2>
+<%= link_to 'New Catalog', new_publisher_catalog_path(@publisher) %> <%= link_to 'New Call', new_publisher_call_path(@publisher) %>
+<%= render :partial => "event_table", :locals => { :events => @publisher.events } %>
