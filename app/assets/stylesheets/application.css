@@ -1,3 +1,7 @@
+/*
+ *= require really-simple-color-picker/colorPicker
+ */
+
 body {
   background-color: #eee;
   font-family: Verdana, Helvetica, Arial;
@@ -176,7 +180,3 @@ a {
   text-align: center;
   margin-bottom: 10px;
 }
-
-/* ...
-*= require really-simple-color-picker/colorPicker
-*/
