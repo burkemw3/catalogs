@@ -8,7 +8,12 @@ class Publisher < ActiveRecord::Base
 
   def self.search(search)
      if search
-       find(:all, :conditions => ['name LIKE ? OR phone LIKE ?', "%#{search}%", "%#{search}%"], :order => "should_call DESC")
+       if Rails.env.production?
+         # differences between PG and SQLite suck
+         find(:all, :conditions => ['name ILIKE ? OR phone LIKE ?', "%#{search}%", "%#{search}%"], :order => "should_call DESC")
+       else
+         find(:all, :conditions => ['name LIKE ? OR phone LIKE ?', "%#{search}%", "%#{search}%"], :order => "should_call DESC")
+       end
      else
        find(:all, :order => "should_call DESC")
      end
