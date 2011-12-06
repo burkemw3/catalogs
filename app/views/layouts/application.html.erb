@@ -12,9 +12,9 @@
   <small>Catalogs</small>
   <div id="user_nav">
     <% if current_user %>
-      <%= link_to "Sign out", signout_path %>
+      <%= link_to "Logins", authentications_path %>&nbsp;<%= link_to "Sign out", signout_path %>
     <% else %>
-      Sign in via <%= link_to "Twitter", "auth/twitter" %>
+      <%= link_to "Sign in", authentications_path %>
     <% end %>
   </div>
 
