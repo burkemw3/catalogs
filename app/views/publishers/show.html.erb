@@ -7,7 +7,7 @@
 
 <p>
   <b>Phone:</b>
-  <%= @publisher.phone %>
+  <% if @publisher.phone %><a href="tel:<%= @publisher.phone %>"><%= @publisher.phone %></a><% end %>
 </p>
 
 <p>
