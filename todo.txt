@@ -1,4 +1,3 @@
-- hyperlink phone on publisher detail page
 - redirect to home if not logged in
 - redirect to publishers if logged in and go home
 - use environment variables (http://tammersaleh.com/posts/managing-heroku-environment-variables-for-local-development)
