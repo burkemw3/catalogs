@@ -17,7 +17,7 @@
 <% @publishers.each do |publisher| %>
   <tr>
     <td><%= publisher.name %></td>
-    <td><%= publisher.phone %></td>
+    <td style="white-space: nowrap"><% if publisher.phone %><a href="tel:<%= publisher.phone %>"><%= publisher.phone %></a><% end %></td>
     <td><%= publisher.should_call %></td>
     <td><%= publisher.address %></td>
     <td><%= link_to 'Show', publisher %></td>
