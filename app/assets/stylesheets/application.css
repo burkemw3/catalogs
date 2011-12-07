@@ -23,10 +23,10 @@ a {
 }
 
 #container {
-  width: 75%;
+  max-width: 1024px;
   margin: 0 auto;
   background-color: #FFF;
-  padding: 20px 40px;
+  padding: 20px 10px;
   border: solid 1px black;
   margin-top: 20px;
 }
