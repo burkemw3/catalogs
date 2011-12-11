@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Address:</b>
+  <%= @publisher.address %>
+</p>
+
+<p>
   <b>Phone:</b>
   <% if @publisher.phone %><a href="tel:<%= @publisher.phone %>"><%= @publisher.phone %></a><% end %>
 </p>
@@ -13,11 +18,6 @@
 <p>
   <b>Should call:</b>
   <%= @publisher.should_call %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @publisher.address %>
 </p>
 
 

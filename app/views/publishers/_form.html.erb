@@ -16,16 +16,16 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
     <%= f.label :phone %><br />
     <%= f.text_field :phone %>
   </div>
   <div class="field">
     <%= f.label :should_call %><br />
     <%= f.check_box :should_call %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
   </div>
   <div class="actions">
     <%= f.submit %>
