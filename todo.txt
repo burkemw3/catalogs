@@ -1,6 +1,4 @@
 - handle authentication better
   - redirect to home if not logged in
   - redirect to publishers if logged in and request home page
-- force SSL
 - add about page
-- edit README
