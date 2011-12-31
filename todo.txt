@@ -2,3 +2,5 @@
   - redirect to home if not logged in
   - redirect to publishers if logged in and request home page
 - add about page
+- make recommendations on who to call
+- use Backbone.js
